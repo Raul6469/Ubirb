@@ -1,10 +1,9 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Build app"]
+  resolves = ["vgaidarji/android-github-actions/build@v1.0.0"]
 }
 
-action "Build app" {
-  uses = "Raul6469/android-gradle-action@master"
-  args = "clean assembleDebug"
-  secrets = ["ANDROID_LICENCE"]
+action "vgaidarji/android-github-actions/build@v1.0.0" {
+  uses = "vgaidarji/android-github-actions/build@v1.0.0"
+  args = "./gradlew clean assembleDebug"
 }
